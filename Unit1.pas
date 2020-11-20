@@ -47,13 +47,16 @@ type
       fnumero2 : integer;
       fsinal   : char;
     public
+
     constructor Create();
+
     procedure setNumero1 (snumero1 : integer);
-    function getNumero1 : double;
     procedure setNumero2 (snumero2 : integer);
     procedure setSinal   (ssinal   : char);
-    function getSinal : char;
-    function Calculo : double;
+
+    function getNumero1 : double;
+    function getSinal   : char;
+    function Calculo    : double;
   end;
 
 
@@ -62,7 +65,7 @@ type
 
 
 var
-  Form1: TForm1;
+  Form1  : TForm1;
   calculo: TCalculo;
 
 implementation
@@ -83,7 +86,7 @@ constructor TCalculo.Create;
 begin
   fnumero1 := null;
   fnumero2 := null;
-  fsinal   := 'a';
+  //fsinal   := 'a';
 end;
 
 function TCalculo.getNumero1: double;
