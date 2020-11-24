@@ -56,38 +56,32 @@ type
 
     function getNumero1 : double;
     function getSinal   : char;
-    function Calculo    : double;
+    //function Calculo    : double;
   end;
-
-
-
-
-
 
 var
   Form1  : TForm1;
   calculo: TCalculo;
 
+
+
 implementation
 
 {$R *.dfm}
 
-
-
-
 //Implementação das funções da classe TCalculo / TCalculo functions implementation
 
-function TCalculo.Calculo: double;
-begin
 
+
+constructor TCalculo.Create();
+begin
+  fsinal   := 'a';
 end;
 
-constructor TCalculo.Create;
+(*function TCalculo.Calculo: double;
 begin
-  fnumero1 := null;
-  fnumero2 := null;
-  //fsinal   := 'a';
-end;
+
+end;*)
 
 function TCalculo.getNumero1: double;
 begin
@@ -247,5 +241,11 @@ begin
 end;
 
 //Fim da implementação dos botões / Buttons Implementation end
+
+initialization
+  calculo := TCalculo.Create;
+
+finalization
+  calculo.Free;
 
 end.
