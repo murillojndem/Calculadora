@@ -18,11 +18,13 @@ type
     Button8: TButton;
     Button9: TButton;
     Button0: TButton;
-    Button11: TButton;
+    Soma: TButton;
     edit_resultado: TEdit;
-    Button10: TButton;
+    Igual: TButton;
+    Subtracao: TButton;
+    Divisao: TButton;
+    Multiplicacao: TButton;
     procedure Button9Click(Sender: TObject);
-    procedure Button11Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -32,6 +34,11 @@ type
     procedure Button7Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
     procedure Button0Click(Sender: TObject);
+    procedure MultiplicacaoClick(Sender: TObject);
+    procedure IgualClick(Sender: TObject);
+    procedure SomaClick(Sender: TObject);
+    procedure SubtracaoClick(Sender: TObject);
+    procedure DivisaoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,8 +62,9 @@ type
     procedure setSinal   (ssinal   : char);
 
     function getNumero1 : double;
+    function getNumero2 : double;
     function getSinal   : char;
-    //function Calculo    : double;
+    function Calculo    : double;
   end;
 
 var
@@ -73,19 +81,21 @@ implementation
 
 
 
+
+
 constructor TCalculo.Create();
 begin
   fsinal   := 'a';
 end;
 
-(*function TCalculo.Calculo: double;
-begin
-
-end;*)
-
 function TCalculo.getNumero1: double;
 begin
 result := fnumero1;
+end;
+
+function TCalculo.getNumero2: double;
+begin
+result := fnumero2;
 end;
 
 function TCalculo.getSinal: char;
@@ -108,6 +118,12 @@ begin
 fsinal := ssinal;
 end;
 
+function TCalculo.Calculo: double;
+begin
+  if fsinal = '+' then
+  result := (fnumero1+fnumero2);
+end;
+
 // Fim da implementação das funções da classe TCalculo / TCalculo class functions implementation end
 
 //Implementação dos botões / Buttons Implementation
@@ -117,127 +133,167 @@ begin
   if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(0);
-    edit_resultado.text := floattostr(0);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(0);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(1);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(1);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(2);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(2);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(3);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(3);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button4Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(4);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(4);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button5Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(5);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(5);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button6Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(6);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(6);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button7Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(7);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(7);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button8Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(8);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(8);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 procedure TForm1.Button9Click(Sender: TObject);
 begin
-  if calculo.getSinal = null then
+  if calculo.getSinal = 'a' then
   begin
     calculo.setNumero1(9);
+    edit_resultado.text := floattostr(calculo.getNumero1);
   end
   else
   begin
     calculo.setNumero2(9);
+    edit_resultado.text := floattostr(calculo.getNumero2);
   end;
 end;
 
 // Implementação dos botões de operação / Operations button's implementation
 
-procedure TForm1.Button11Click(Sender: TObject);
+procedure TForm1.MultiplicacaoClick(Sender: TObject);
+begin
+calculo.setSinal('*');
+end;
+
+procedure TForm1.SomaClick(Sender: TObject);
+begin
+calculo.setSinal('+');
+end;
+
+procedure TForm1.SubtracaoClick(Sender: TObject);
+begin
+calculo.setSinal('-');
+end;
+
+procedure TForm1.DivisaoClick(Sender: TObject);
+begin
+calculo.setSinal('/');
+end;
+
+procedure TForm1.IgualClick(Sender: TObject);
 begin
 
+  edit_resultado.text := floattostr(calculo.Calculo);
 end;
 
 //Fim da implementação dos botões / Buttons Implementation end

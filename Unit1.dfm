@@ -103,14 +103,14 @@ object Form1: TForm1
     TabOrder = 9
     OnClick = Button0Click
   end
-  object Button11: TButton
+  object Soma: TButton
     Left = 288
     Top = 18
     Width = 75
     Height = 25
     Caption = '+'
     TabOrder = 10
-    OnClick = Button11Click
+    OnClick = SomaClick
   end
   object edit_resultado: TEdit
     Left = 400
@@ -128,12 +128,40 @@ object Form1: TForm1
     TabOrder = 11
     Text = 'teste'
   end
-  object Button10: TButton
+  object Igual: TButton
     Left = 432
     Top = 95
     Width = 75
     Height = 25
     Caption = '='
     TabOrder = 12
+    OnClick = IgualClick
+  end
+  object Subtracao: TButton
+    Left = 288
+    Top = 49
+    Width = 75
+    Height = 25
+    Caption = '-'
+    TabOrder = 13
+    OnClick = SubtracaoClick
+  end
+  object Divisao: TButton
+    Left = 288
+    Top = 111
+    Width = 75
+    Height = 25
+    Caption = '/'
+    TabOrder = 14
+    OnClick = DivisaoClick
+  end
+  object Multiplicacao: TButton
+    Left = 288
+    Top = 80
+    Width = 75
+    Height = 25
+    Caption = '*'
+    TabOrder = 15
+    OnClick = MultiplicacaoClick
   end
 end
