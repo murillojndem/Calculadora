@@ -130,7 +130,7 @@ object Form1: TForm1
   end
   object Igual: TButton
     Left = 432
-    Top = 95
+    Top = 111
     Width = 75
     Height = 25
     Caption = '='
@@ -163,5 +163,14 @@ object Form1: TForm1
     Caption = '*'
     TabOrder = 15
     OnClick = MultiplicacaoClick
+  end
+  object Button10: TButton
+    Left = 432
+    Top = 80
+    Width = 75
+    Height = 25
+    Caption = 'C'
+    TabOrder = 16
+    OnClick = Button10Click
   end
 end

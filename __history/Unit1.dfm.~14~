@@ -29,6 +29,7 @@ object Form1: TForm1
     Height = 25
     Caption = '2'
     TabOrder = 1
+    OnClick = Button2Click
   end
   object Button3: TButton
     Left = 176
@@ -37,6 +38,7 @@ object Form1: TForm1
     Height = 25
     Caption = '3'
     TabOrder = 2
+    OnClick = Button3Click
   end
   object Button4: TButton
     Left = 14
@@ -54,6 +56,7 @@ object Form1: TForm1
     Height = 25
     Caption = '5'
     TabOrder = 4
+    OnClick = Button5Click
   end
   object Button6: TButton
     Left = 176
@@ -62,6 +65,7 @@ object Form1: TForm1
     Height = 25
     Caption = '6'
     TabOrder = 5
+    OnClick = Button6Click
   end
   object Button7: TButton
     Left = 14
@@ -70,6 +74,7 @@ object Form1: TForm1
     Height = 25
     Caption = '7'
     TabOrder = 6
+    OnClick = Button7Click
   end
   object Button8: TButton
     Left = 95
@@ -78,6 +83,7 @@ object Form1: TForm1
     Height = 25
     Caption = '8'
     TabOrder = 7
+    OnClick = Button8Click
   end
   object Button9: TButton
     Left = 176
@@ -86,6 +92,7 @@ object Form1: TForm1
     Height = 25
     Caption = '9'
     TabOrder = 8
+    OnClick = Button9Click
   end
   object Button0: TButton
     Left = 95
@@ -94,14 +101,16 @@ object Form1: TForm1
     Height = 25
     Caption = '0'
     TabOrder = 9
+    OnClick = Button0Click
   end
-  object Button11: TButton
+  object Soma: TButton
     Left = 288
     Top = 18
     Width = 75
     Height = 25
     Caption = '+'
     TabOrder = 10
+    OnClick = SomaClick
   end
   object edit_resultado: TEdit
     Left = 400
@@ -118,5 +127,50 @@ object Form1: TForm1
     ReadOnly = True
     TabOrder = 11
     Text = 'teste'
+  end
+  object Igual: TButton
+    Left = 432
+    Top = 111
+    Width = 75
+    Height = 25
+    Caption = '='
+    TabOrder = 12
+    OnClick = IgualClick
+  end
+  object Subtracao: TButton
+    Left = 288
+    Top = 49
+    Width = 75
+    Height = 25
+    Caption = '-'
+    TabOrder = 13
+    OnClick = SubtracaoClick
+  end
+  object Divisao: TButton
+    Left = 288
+    Top = 111
+    Width = 75
+    Height = 25
+    Caption = '/'
+    TabOrder = 14
+    OnClick = DivisaoClick
+  end
+  object Multiplicacao: TButton
+    Left = 288
+    Top = 80
+    Width = 75
+    Height = 25
+    Caption = '*'
+    TabOrder = 15
+    OnClick = MultiplicacaoClick
+  end
+  object Button10: TButton
+    Left = 432
+    Top = 80
+    Width = 75
+    Height = 25
+    Caption = 'C'
+    TabOrder = 16
+    OnClick = Button10Click
   end
 end

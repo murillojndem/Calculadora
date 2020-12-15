@@ -24,6 +24,7 @@ type
     Subtracao: TButton;
     Divisao: TButton;
     Multiplicacao: TButton;
+    Button10: TButton;
     procedure Button9Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -39,6 +40,7 @@ type
     procedure SomaClick(Sender: TObject);
     procedure SubtracaoClick(Sender: TObject);
     procedure DivisaoClick(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -120,8 +122,27 @@ end;
 
 function TCalculo.Calculo: double;
 begin
-  if fsinal = '+' then
-  result := (fnumero1+fnumero2);
+  //if fsinal = '+' then
+  //result := (fnumero1+fnumero2);
+
+  case fsinal of
+    '+': begin
+      result := (fnumero1+fnumero2);
+    end;
+
+    '-': begin
+      result := (fnumero1-fnumero2);
+    end;
+
+    '*': begin
+      result := (fnumero1*fnumero2);
+    end;
+
+    '/': begin
+      result := (fnumero1/fnumero2);
+    end;
+
+  end;
 end;
 
 // Fim da implementação das funções da classe TCalculo / TCalculo class functions implementation end
@@ -140,6 +161,13 @@ begin
     calculo.setNumero2(0);
     edit_resultado.text := floattostr(calculo.getNumero2);
   end;
+end;
+
+procedure TForm1.Button10Click(Sender: TObject);
+begin
+  calculo.Free;
+  calculo := TCalculo.Create;
+  edit_resultado.text := floattostr(0);
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
