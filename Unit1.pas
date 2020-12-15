@@ -149,6 +149,13 @@ end;
 
 //Implementação dos botões / Buttons Implementation
 
+procedure TForm1.Button10Click(Sender: TObject);
+begin
+  calculo.Free;
+  calculo := TCalculo.Create;
+  edit_resultado.text := floattostr(0);
+end;
+
 procedure TForm1.Button0Click(Sender: TObject);
 begin
   if calculo.getSinal = 'a' then
@@ -161,13 +168,6 @@ begin
     calculo.setNumero2(0);
     edit_resultado.text := floattostr(calculo.getNumero2);
   end;
-end;
-
-procedure TForm1.Button10Click(Sender: TObject);
-begin
-  calculo.Free;
-  calculo := TCalculo.Create;
-  edit_resultado.text := floattostr(0);
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -320,7 +320,6 @@ end;
 
 procedure TForm1.IgualClick(Sender: TObject);
 begin
-
   edit_resultado.text := floattostr(calculo.Calculo);
 end;
 
